@@ -1,24 +1,28 @@
 # Hi, I'm Ella (Yiyao Li)
 
-**I build and evaluate AI systems for real-world decision making.**
+**I build AI systems that help people make decisions, and I test them.**
 
-Everything I ship comes with its own evaluation: a set of cases written before the first run, numbers I can defend, and the failures listed next to the wins.
+Every project has its own test set. I write the test cases before the first run. I report the results and the failures.
 
-Data Science at UC Berkeley · Research Assistant, WISE Team (LLM evaluation and label-efficient learning)
+Data Science student at UC Berkeley. Research Assistant on the WISE Team, where I test how well large language models (LLMs) classify student reasoning.
 
 ## Featured
 
-| Project | What it proves | Numbers |
+| Project | What it does | Results |
 |---|---|---|
-| **[Verdict](https://github.com/yli949-gif/verdict)** | AI-assisted decision support for PayPal dispute handling. Policy rules decide, the model explains, PayPal's own allowed-actions links gate every call, and the seller approves before anything is sent. | 95-case benchmark · 100% agreement with an independent policy table vs. 66% for Claude zero-shot · 0% unsafe actions · 11/11 gate-bypass probes rejected by PayPal · 400 randomized contract tests |
-| **[Holdfast](https://github.com/yli949-gif/holdfast)** | Stateful guardrails for AI coding agents: plain-English rules ("only push after the tests pass") enforced on every tool call, with state kept outside the model so it can't be forgotten. | missed violations 8/129 vs. 39/129 (regex hook) and 54/129 (native permissions) on a blind test set · 0/93 adversarial bypasses · 1,170 tests |
-| **[WiderWorld](https://github.com/yli949-gif/widerworld)** · [live](https://widerworld-tau.vercel.app) | A deployed AI decision-support product where a rule engine is the source of truth, the model may only propose structured changes, and the parent approves each one. Evidence provenance on every suggestion. | 10-case eval with pre-stated expectations · 29/29 proposals passed hard constraints · 0 fabricated sources · 45 tests · whole V1 cost $0.43 in API spend |
-| **[tadpole](https://github.com/yli949-gif/tadpole)** | A human-in-the-loop workflow for coding agents, tested against the failure modes it claims to prevent, with a pre-registered rubric. | plan-before-edit 0/3 → 3/3 · criteria 20/30 → 30/30 · regression 27/28 · the one failure motivated v0.2 |
+| **[Verdict](https://github.com/yli949-gif/verdict)** | Helps PayPal sellers decide how to answer a dispute. Fixed policy rules make the decision. The AI model explains it. The seller approves before anything is sent. | 95 test cases · matches the policy table in 100% of cases (Claude alone: 66%) · 0 unsafe actions · PayPal refused all 11 actions that skipped the safety check · 400 random contract tests |
+| **[Holdfast](https://github.com/yli949-gif/holdfast)** | Makes AI coding agents follow rules, such as "only push after the tests pass." It checks every action. The rules are stored outside the model, so the agent cannot forget them. | Missed 8 of 129 rule breaks (regex hook: 39, built-in permissions: 54) · 0 of 93 attacks got through · 1,170 tests |
+| **[WiderWorld](https://github.com/yli949-gif/widerworld)** · [live](https://widerworld-tau.vercel.app) | Helps parents plan their child's education. Rules decide what is allowed. The model only suggests changes. The parent approves each change. Every suggestion shows its source. | 10 test cases · 29 of 29 suggestions passed the hard rules · 0 made-up sources · 45 tests · the first version cost $0.43 in API fees |
+| **[tadpole](https://github.com/yli949-gif/tadpole)** | Makes a coding agent plan, ask for approval, and then act. I tested it against the problems it should prevent, with a scoring rubric written in advance. | Plans before editing: 0 of 3 → 3 of 3 · rubric score 20/30 → 30/30 · 27 of 28 regression tests pass; the one failure led to v0.2 |
 
-Also: [ai-workflow-observability](https://github.com/yli949-gif/ai-workflow-observability), operational analytics of AI agents inside a support workflow (routing, escalation, cost; 10 figures, executive summary, Tableau-ready exports) · [saythis](https://github.com/yli949-gif/saythis), a grounded meeting-answer pipeline (small-model triage → retrieval → cited answer, LOW confidence when the answer isn't in the sources; 10/10 fixtures).
+Also:
+- **[ai-workflow-observability](https://github.com/yli949-gif/ai-workflow-observability)**: analyzes how AI agents perform in a customer support workflow (routing, escalation, and cost). 10 charts, a summary, and data ready for Tableau.
+- **[saythis](https://github.com/yli949-gif/saythis)**: answers questions in meetings from your project notes and shows the sources. It says "low confidence" when the notes do not have the answer. 10 of 10 test cases pass.
 
 ## How I work
 
-Rules and deterministic checks before model judgment; model judgment before human review; human review always. Write the eval before the feature. Keep the failures in the README.
+- Rules and fixed checks come first. The AI model comes second. A person makes the final decision.
+- I write the tests before I build the feature.
+- I keep the failures in the README.
 
-Background: data science, AI evaluation, and AI product work; bilingual (English / 中文). Open to Data & AI analytics, Applied AI, AI product, and evaluation roles.
+I work in data science, AI testing, and AI products. I speak English and Chinese (中文). I am open to Data & AI analytics, applied AI, AI product, and AI evaluation roles.
